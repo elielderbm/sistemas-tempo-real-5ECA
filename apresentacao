@@ -1,0 +1,24 @@
+#define LED_PIN 4
+
+bool led_state = false;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  Serial.println("Hello, ESP32!");
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  delay(1000); // this speeds up the simulation
+
+  if(led_state == false){
+    digitalWrite(LED_PIN, LOW);
+    led_state = true;
+  }
+  else{
+    digitalWrite(LED_PIN, HIGH);
+    led_state = false;
+  }
+}
